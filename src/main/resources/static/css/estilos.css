@@ -1,14 +1,13 @@
 #encabezado{
-     position:absolute;
-    top:0;
-    left:0;
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 8%;
-    widht:100%;
+    width: 100%;
     background-color: #496D8D;
-    color:white;
+    color: white;
     padding-left: 15px;
-}
-
+       }
 
 
 #menu{
@@ -16,13 +15,12 @@
     top:8%;
     left:0;
     height: 4%;
-    widht:100%;
+    width: 100%;
     background-color: #9B8030;
     color:black;
     padding-left: 15px;
 
 }
-
 
 #menu a:visited{
     
@@ -48,29 +46,25 @@
     
 }
 
-#contenido{
-    
+#contenido{ 
     position:absolute;
     top:12%;
     left:20%;
     height: 81%;
-    widht:80%;
+   width: 80%;
     background-color: #8fc6ff;
     color:black;
     padding-left: 15px;
-    overflow: auto;
-    
+    overflow: auto;  
 }
 
 
-#piePagina{
-    
-    
+#piePagina{  
     position:absolute;
     bottom: 0;
     left:0;
     height: 7%;
-    widht:100%;
+    width: 100%;
     background-color: aquamarine;
     color:black;
     padding-left: 15px;
@@ -81,3 +75,4 @@
     
     display:inline;
 }
+
