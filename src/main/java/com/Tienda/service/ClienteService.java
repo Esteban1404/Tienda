@@ -7,18 +7,14 @@ package com.Tienda.service;
 import com.Tienda.domain.Cliente;
 import java.util.List;
 
-/**
- *
- * @author esteb
- */
 public interface ClienteService {
     
     
-    public List<Cliente> getClientes();
+    public List<Cliente> getClientes(); //TRAER LISTA DE CLIENTES
     
-    public Cliente getCliente(Cliente cliente);
+    public Cliente getCliente(Cliente cliente);//UN UNICO CLIENTE
     
     public void save(Cliente cliente);// Para insertar o modificar (Si viene el idCliente o no)
     
-    public void delete (Cliente cliente);
+    public void delete (Cliente cliente); //ELIMINAR CLIENTE
 }
