@@ -23,6 +23,7 @@ body{
    top:0;
    width: 100%;
    position:fixed;
+   left: 0;
    
 }
 
@@ -72,7 +73,41 @@ body{
 }
 
 .nav-menu-link:hover{
+    font-size: 22px;
     background-color: cyan;
     transition: 0.7s;
+    
+}
+
+.contenido{
+    
+    
+    background-color:lavender;
+    position: fixed;
+    top:80px;
+    bottom:20px;
+    left:0;
+    width:100%;
+    overflow:auto;
+    
+    
+      
+}
+
+.footer{
+    
+    background-color: black;
+    position: fixed;
+    text-align: center;
+    color:white;
+    height: 20px;
+    color:white;
+    height:20px;
+    left:0;
+    width:100%;
+    bottom: 0;
+   
+    
+    
     
 }

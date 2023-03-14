@@ -3,51 +3,55 @@
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
+        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        
+
         <header th:replace="layout/plantilla :: header"/>
-        <h2>Lista de Clientes</h2>
-        
-        <a th:href="@{/nuevoCliente}">Nuevo Estado</a>
-        <div th:if="${clientes!= null and !clientes.empty}">
+        <div class="contenido">
+
+            <h2>Articulos Disponibles</h2>
+
             
-            <table border="1">
+           
+            <div th:if="${articulos!= null and !articulos.empty}">
 
-            <thead>
+                <table border="1">
 
-            <th>Nombre</th>
-            <th>Apellidos</th>
-            <th>Correo</th>
-            <th>Telefono</th>
-            <th colspan="2">Acciones</th>
+                    <thead>
 
-        </thead>
-        <tbody>
-            <tr th:each="item : ${clientes}">
+                    <th>Descripcion</th>
+                    <th>Precio</th>       
+                    <th >Acciones</th>
 
-                <td th:text="${item.nombre}"></td>
-                <td th:text="${item.apellidos}"></td>
-                <td th:text="${item.telefono}"></td>
-                <td th:text="${item.correo}"></td>
-                <td><a th:href="@{/modificarCliente/}+${item.idCliente}">Modificar</a></td>
-                <td><a th:href="@{/eliminarCliente/}+${item.idCliente}">Eliminar</a></td>
+                    </thead>
+                    <tbody>
+                        <tr th:each="item:${articulos}">
 
-            </tr>
+                            <td th:text="${item.descripcion}"></td>
+                            
+                            <td th:text="${#numbers.formatDecimal(item.precio,3,2)}"></td>
+                            
+                            <td><a th:href="@{/carrito/agregar}+${item.idArticulo}">Comprar</a></td>
 
-
-        </tbody>
+                        </tr>
 
 
-    </table>
-        </div>
-        <div th:if="${clientes== null or clientes.empty}">
-            
-            La lista esta vacia...
-            
+                    </tbody>
+
+
+                </table>
+            </div>
+            <div th:if="${articulos== null or articulos.empty}">
+
+                La lista esta vacia...
+
+            </div>
+
+
         </div>
         <footer  th:replace="layout/plantilla 
                  :: footer"/> 
-</body>
+    </body>
 </html>
