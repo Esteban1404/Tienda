@@ -1,4 +1,5 @@
-<html xmlns:th="http://www.thymeleaf.org">
+
+   <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
@@ -13,7 +14,7 @@
             <h2>Lista de Clientes</h2>
 
             <a th:href="@{/cliente/nuevo}">Nuevo Cliente</a> <br/>
-            <a th:href="@{/cliente/busqueda}">Buscar Cliente</a>
+            
             <div th:if="${clientes != null and !clientes.empty}">
 
                 <table border="1">
@@ -25,7 +26,7 @@
                     <th>Correo</th>
                     <th>Telefono</th>
                     <th>Limite</th>
-                    <th colspan="2">Acciones</th>
+                   
 
                     </thead>
                     <tbody>
@@ -38,8 +39,7 @@
                             <td th:text="${#numbers.formatDecimal(item.credito.limite,3,2)}"></td>
 
 
-                            <td><a th:href="@{/cliente/modificar/}+${item.idCliente}">Modificar</a></td>
-                            <td><a th:href="@{/cliente/eliminar/}+${item.idCliente}">Eliminar</a></td>
+                         
 
                         </tr>
 

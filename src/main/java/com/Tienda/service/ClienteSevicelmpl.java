@@ -13,13 +13,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-
 @Service
 public class ClienteSevicelmpl implements ClienteService {
 
     @Autowired
     ClienteDao clienteDao;
-  
+
     @Autowired
     CreditoDao creditoDao;
 
@@ -41,7 +40,7 @@ public class ClienteSevicelmpl implements ClienteService {
     public void save(Cliente cliente) {  //MODIFICAR O INSERATR UN NUEVO CLIENTE
         Credito credito = cliente.getCredito();
         credito = creditoDao.save(credito);
-        
+
         cliente.setCredito(credito);
         clienteDao.save(cliente);
     }
@@ -53,4 +52,23 @@ public class ClienteSevicelmpl implements ClienteService {
         clienteDao.deleteById(cliente.getIdCliente());   //ELIMINAR CLIENTE
     }
 
+    @Override
+    public List<Cliente> findByNombre(String nombre) {
+
+        return clienteDao.findByNombre(nombre);
+
+    }
+
+    @Override
+    public List<Cliente> findByTelefono(String telefono) {
+        return clienteDao.findByTelefono(telefono);
+
+    }
+
+    @Override
+    public List<Cliente> findByApellidos(String apellidos) {
+        return clienteDao.findByApellidosIgnoreCase(apellidos);
+    }
+
+    
 }

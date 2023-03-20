@@ -30,6 +30,8 @@
                         <tr th:each="item : ${articulos}">
 
                             <td th:text="${item.descripcion}"></td>
+                            
+                            
                             <td th:text="${#numbers.formatDecimal(item.precio,3,2)}"></td>
                             <td th:text="${item.existencias}"></td>
                             <td><input type="checkbox" name="activa" th:checked="${item.activo}" disable="true"></td>

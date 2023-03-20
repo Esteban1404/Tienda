@@ -10,7 +10,7 @@
         <header th:replace="layout/plantilla :: header"/>
         <div class="contenido">
 
-            <h2>Datos del cliente</h2>
+            <h2>Datos de Articulos</h2>
             <a th:href="@{/articulo/listado}">Regresar</a>
             <br />
             <br />
@@ -23,6 +23,9 @@
 
                 <label for="descripcion">Descripcion</label> <br/>
                 <input type="text" id="Descripcion" name="Descripcion" th:field="*{descripcion}"/> <br/>
+               
+                <label for="detalle:">Detalle:</label> <br/>
+                <textarea name="detalle" th:field="*{detalle}" rows="6" cols="50"/>
 
                 <label for="precio">Precio:</label> <br/>
                 <input type="number" id="precio" name="precio" th:field="*{precio}"/><br/>

@@ -27,6 +27,7 @@ public class ClienteController {
     @GetMapping("/cliente/listado")
     public String inicio(Model model) {
         var clientes = clienteService.getClientes();
+        //var clientes = clienteService.findByNombre("Ana");
         model.addAttribute("clientes", clientes);  //Traer lista de clientes
 
         return "/cliente/listado";
@@ -60,6 +61,28 @@ public class ClienteController {
                                                            //ELIMINAR CLIENTE
         clienteService.delete(cliente);
         return "redirect:/cliente/listado";
+
+    }
+    
+    
+    
+    @GetMapping("/cliente/busqueda")
+    public String buscarCliente(Cliente cliente) {
+        return "/cliente/buscar";
+    }
+
+    
+    
+   
+    @PostMapping("/cliente/guardar/")
+    public String buscar(Cliente cliente,Model model) {
+       // clienteService.save(cliente); 
+        
+        var clientes = clienteService.findByApellidos("");
+        
+        model.addAttribute("clientes", clientes);
+
+        return "redirect:/cliente/busqueda";
 
     }
 }
