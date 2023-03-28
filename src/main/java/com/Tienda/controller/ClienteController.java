@@ -66,23 +66,24 @@ public class ClienteController {
     
     
     
-    @GetMapping("/cliente/busqueda")
-    public String buscarCliente(Cliente cliente) {
-        return "/cliente/buscar";
+    @GetMapping("/cliente/buscar")
+    public String buscar(Cliente cliente) {
+        
+        return "/cliente/buscarCliente";
     }
 
     
     
    
-    @PostMapping("/cliente/guardar/")
-    public String buscar(Cliente cliente,Model model) {
+    @PostMapping("/cliente/busqueda/")
+    public String busqueda(Cliente cliente,Model model) {
        // clienteService.save(cliente); 
         
-        var clientes = clienteService.findByApellidos("");
+        var clientes = clienteService.findByNombre(cliente.getNombre());
         
-        model.addAttribute("clientes", clientes);
+        model.addAttribute("resultados", clientes);
 
-        return "redirect:/cliente/busqueda";
+        return "redirect:/cliente/buscarCliente";
 
     }
 }
