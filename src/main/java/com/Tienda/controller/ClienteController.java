@@ -75,7 +75,7 @@ public class ClienteController {
     
     
    
-    @PostMapping("/cliente/busqueda/")
+    @PostMapping("/cliente/busqueda")
     public String busqueda(Cliente cliente,Model model) {
        // clienteService.save(cliente); 
         

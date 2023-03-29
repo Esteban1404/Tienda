@@ -1,8 +1,7 @@
 
 <html xmlns:th="http://www.thymeleaf.org">
-    <head>
+    <head th:replace="layout/plantilla :: head">
         <title>Buscar Cliente</title>
-        <meta charset="UTF-8">
         <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,7 +48,7 @@
 
                         </thead>
                         <tbody>
-                            <tr th:each="item : ${resultados}">
+                            <tr th:each="item:${resultados}">
 
                                 <td th:text="${item.nombre}"></td>
                                 <td th:text="${item.apellidos}"></td>

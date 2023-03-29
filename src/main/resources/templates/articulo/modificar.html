@@ -10,8 +10,8 @@
         <header th:replace="layout/plantilla :: header"/>
         <div class="contenido">
 
-            <h2>Datos de Articulos</h2>
-            <a th:href="@{/articulo/listado}">Regresar</a>
+            <h2 th:text="#{articulo.datos}">Datos de Articulos</h2>
+            <a th:href="@{/articulo/listado}" th:text="#{articulo.regresar}">Regresar</a>
             <br />
             <br />
 
@@ -22,19 +22,19 @@
                 <input type="hidden" name="idArticulo" th:field="*{idArticulo}" />
 
                 <label for="descripcion">Descripcion</label> <br/>
-                <input type="text" id="Descripcion" name="Descripcion" th:field="*{descripcion}"/> <br/>
+                <input type="text" th:text="#{articulo.descripcion}" id="Descripcion" name="Descripcion" th:field="*{descripcion}"/> <br/>
                
                 <label for="detalle:">Detalle:</label> <br/>
-                <textarea name="detalle" th:field="*{detalle}" rows="6" cols="50"/>
+                <textarea name="detalle" th:text="#{articulo.detalle}" th:field="*{detalle}" rows="6" cols="50"/>
 
                 <label for="precio">Precio:</label> <br/>
-                <input type="number" id="precio" name="precio" th:field="*{precio}"/><br/>
+                <input type="number"  th:text="#{articulo.precio}" id="precio" name="precio" th:field="*{precio}"/><br/>
 
                 <label for="existencias">Existencias:</label><br/>
-                <input type="number" id="existencias" name="existencias" th:field="*{existencias}"/><br/>
+                <input type="number" th:text="#{articulo.exixtencias}" id="existencias" name="existencias" th:field="*{existencias}"/><br/>
                 
                 <label for="activo">Activo:</label><br/>
-                <input type="checkbox" id="activo" name="activo" th:field="*{activo}"/><br/><br/>
+                <input type="checkbox" th:text="#{articulo.activo}" id="activo" name="activo" th:field="*{activo}"/><br/><br/>
                 
                 
 

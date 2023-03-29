@@ -30,8 +30,7 @@
                             
                             <td th:text="${#numbers.formatDecimal(item.precio,3,2)}"></td>
                             
-                            <td><a th:href="@{/carrito/agregar}+${item.idArticulo}"
-                                   th:text="#{accion.agregar}">Comprar</a></td>
+                            <td><a th:href="@{/carrito/agregar}+${item.idArticulo}" th:text="#{accion.agregar}">Comprar</a></td>
 
                         </tr>
 
