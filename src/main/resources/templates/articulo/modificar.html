@@ -1,53 +1,13 @@
-<html xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
-
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://wwww.thymeleaf.org" 
+      xmlns:sec="http://thymeleaft.org/extras/spring-security">
+    
+    <head th:replace="layout/plantilla :: head">
+        <title>TechShop</title>
     </head>
     <body>
-        <header th:replace="layout/plantilla :: header"/>
-        <div class="contenido">
-
-            <h2 th:text="#{articulo.datos}">Datos de Articulos</h2>
-            <a th:href="@{/articulo/listado}" th:text="#{articulo.regresar}">Regresar</a>
-            <br />
-            <br />
-
-            <form th:action="@{/articulo/guardar}"
-                  method="POST"
-                  th:object="${articulo}" >
-
-                <input type="hidden" name="idArticulo" th:field="*{idArticulo}" />
-
-                <label for="descripcion">Descripcion</label> <br/>
-                <input type="text" th:text="#{articulo.descripcion}" id="Descripcion" name="Descripcion" th:field="*{descripcion}"/> <br/>
-               
-                <label for="detalle:">Detalle:</label> <br/>
-                <textarea name="detalle" th:text="#{articulo.detalle}" th:field="*{detalle}" rows="6" cols="50"/>
-
-                <label for="precio">Precio:</label> <br/>
-                <input type="number"  th:text="#{articulo.precio}" id="precio" name="precio" th:field="*{precio}"/><br/>
-
-                <label for="existencias">Existencias:</label><br/>
-                <input type="number" th:text="#{articulo.exixtencias}" id="existencias" name="existencias" th:field="*{existencias}"/><br/>
-                
-                <label for="activo">Activo:</label><br/>
-                <input type="checkbox" th:text="#{articulo.activo}" id="activo" name="activo" th:field="*{activo}"/><br/><br/>
-                
-                
-
-
-               
-
-                <input type="submit" name="guardar" value="Guardar"/>
-
-
-            </form>
-
-        </div>
-        <footer  th:replace="layout/plantilla 
-                 :: footer"/> 
+        <header th:replace="layout/plantilla :: header" />
+        <section th:replace="articulo/fragmentosArticulo :: editarArticulo"/> 
+        <footer th:replace="layout/plantilla :: footer" />
     </body>
 </html>

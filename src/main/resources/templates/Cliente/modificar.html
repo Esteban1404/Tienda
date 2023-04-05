@@ -1,51 +1,15 @@
-<html xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <link href="/css/menu.css" rel="stylesheet" type="text/css"/>
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://wwww.thymeleaf.org" 
+      xmlns:sec="http://thymeleaft.org/extras/spring-security">
+    
+    <head th:replace="layout/plantilla :: head">
+        <title>TechShop</title>
     </head>
     <body>
-        <header th:replace="layout/plantilla :: header"/>
-        <div class="contenido">
-
-            <h2 th:text="#{cliente.datos}">Datos del cliente</h2>
-            <a th:href="@{/cliente/listado}"  th:text="#{accion.regresar}">Regresar</a>
-            <br />
-            <br />
-
-            <form th:action="@{/cliente/guardar}"
-                  method="POST"
-                  th:object="${cliente}" >
-
-                <input type="hidden"name="idCliente" th:field="*{idCliente}" />
-
-                <label for="nombre">Nombre</label> <br/>
-                <input type="text"  th:text="#{cliente.nombre}" id="nombre" name="nombre" th:field="*{nombre}"/> <br/>
-
-                <label for="apellidos">Apellidos:</label> <br/>
-                <input type="text"  th:text="#{cliente.apellidos}" id="apellidos" name="apellidos" th:field="*{apellidos}"/><br/>
-
-                <label for="correo">Correo:</label><br/>
-                <input type="email"  th:text="#{cliente.correo}" id="correo" name="correo" th:field="*{correo}"/><br/>
-
-                <label for="telefono">Telefono:</label><br/>
-                <input type="text"  th:text="#{cliente.telefono}" id="correo" name="apellidos" th:field="*{telefono}"/><br/>
-
-
-                <input type="hidden"name="idCredito" th:field="*{credito.idCredito}" />
-                <label for="limite">Limite de Credito:</label><br/>
-                <input type="number"  th:text="#{cliente.limite}" id="limite" name="limite" th:field="*{credito.limite}"/><br/><br/>
-
-
-                <input type="submit" name="guardar" value="Guardar"  th:value="#{accion.guardar}"/>
-
-
-            </form>
-
-        </div>
-        <footer  th:replace="layout/plantilla 
-                 :: footer"/> 
+        <header th:replace="layout/plantilla :: header" />
+        <section th:replace="cliente/fragmentosCliente :: editarCliente"/> 
+        <footer th:replace="layout/plantilla :: footer" />
     </body>
 </html>
+

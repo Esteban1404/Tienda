@@ -27,10 +27,23 @@ public class ArticuloController {
     
     @Autowired
     CategoriaService categoriaService;
-
+    
+    
+   
     @GetMapping("/articulo/listado")
     public String inicio(Model model) {
+               
         var articulos = articuloService.getArticulos(false);
+        
+        var precioTotal=0;
+        for(var c: articulos){
+        
+            precioTotal+=c.getPrecio();
+        
+        }        
+        model.addAttribute("precioTotal", precioTotal);  
+        model.addAttribute("totalArticulos",articulos.size());
+        
         model.addAttribute("articulos", articulos);  //Traer lista de articulos
 
         return "/articulo/listado";

@@ -26,10 +26,16 @@ public class ClienteController {
 
     @GetMapping("/cliente/listado")
     public String inicio(Model model) {
-        var clientes = clienteService.getClientes();
-        //var clientes = clienteService.findByNombre("Ana");
-        model.addAttribute("clientes", clientes);  //Traer lista de clientes
-
+        var clientes=clienteService.getClientes();
+        
+        var limiteTotal=0;   //Para sumar la variable se va sumando
+        for (var c: clientes) {
+            limiteTotal+=c.getCredito().getLimite();
+        }
+        model.addAttribute("limiteTotal",limiteTotal);//Limite total
+        model.addAttribute("totalClientes",clientes.size());//Total de clientes
+        
+        model.addAttribute("clientes",clientes);
         return "/cliente/listado";
     }
 
