@@ -90,12 +90,28 @@
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
+                </div>
         </section>
         
         
-<!--        Agregar Cliente-->
+<!--        Agregar Cliente-->    </table>
+                            </div>
+                            <div class="text-center p-2" th:if="${clientes == null or clientes.empty}">
+                                <span th:text="#{cliente.no_mostrar}">Lista vacía</span>
+                            </div>
+                        </div>
+                    </div>
+                       <!-- acá va el recorte #10 después -->
+                      <div class="col-md-3">
+                        <div class="card text-center bg-danger text-white mb-3">
+                            <div class="card-body">
+                                <h3 th:text="#{cliente.limiteTotal}">Límite Total</h3>
+                                <h4 class="display-4">
+                                    ¢[[${#numbers.formatDecimal(limiteTotal, 1, 'DEFAULT', 2, 'DEFAULT')}]]
+                                </h4>
+                            </div>
+                        </div>
         <section th:fragment="agregarCliente">
             <div id="agregarCliente" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
